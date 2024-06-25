@@ -53,3 +53,16 @@ class LoanApplicationViewSet(viewsets.ViewSet):
             )
         approve_loan(loan)
         return Response({"status": "Loan approved"})
+
+    @action(detail=True, methods=["put"])
+    def reject(self, request, pk=None):
+        """Handles action for rejecting a loan."""
+        loan = LoanApplication.objects.get(pk=pk)
+        if loan.status != "Pending":
+            return Response(
+                {"error": "Loan cannot be rejected."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        loan.status = "Rejected"
+        loan.save()
+        return Response({"status": "Loan rejected"})
