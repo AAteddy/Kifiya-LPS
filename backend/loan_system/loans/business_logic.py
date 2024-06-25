@@ -20,3 +20,10 @@ def approve_loan(loan_application):
     loan_application.status = "Approved"
     loan_application.approved_at = timezone.now()
     loan_application.save()
+
+
+def disburse_loan(loan_application):
+    """Function to disburse a loan."""
+    loan_application.status = "Disbursed"
+    loan_application.disbursed_at = timezone.now()
+    loan_application.save()
