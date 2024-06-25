@@ -78,3 +78,13 @@ class LoanApplicationViewSet(viewsets.ViewSet):
             )
         disburse_loan(loan)
         return Response({"status": "Loan disbursed"})
+
+    @action(detail=True, methods=["post"])
+    def repay(self, request, pk=None):
+        """Handles action for recording a loan repayment."""
+        loan = LoanApplication.objects.get(pk=pk)
+        serializer = LoanRepaymentSerializer(data=request.data)
+        if serializer.is_valid():
+            record_repayment(loan, serializer.validated_data["amount"])
+            return Response({"status": "Repayment recorded"})
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
