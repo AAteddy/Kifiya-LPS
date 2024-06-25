@@ -16,6 +16,7 @@ def validate_loan_application(loan_application):
 
 
 def approve_loan(loan_application):
+    """Function to approve a loan application."""
     loan_application.status = "Approved"
     loan_application.approved_at = timezone.now()
     loan_application.save()
