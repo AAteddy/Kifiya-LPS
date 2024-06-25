@@ -66,3 +66,15 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         loan.status = "Rejected"
         loan.save()
         return Response({"status": "Loan rejected"})
+
+    @action(detail=True, methods=["post"])
+    def disburse(self, request, pk=None):
+        """Handles action for disbursement of loan."""
+        loan = LoanApplication.objects.get(pk=pk)
+        if loan.status != "Approved":
+            return Response(
+                {"error": "Loan cannot be disbursed."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        disburse_loan(loan)
+        return Response({"status": "Loan disbursed"})
