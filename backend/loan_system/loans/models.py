@@ -19,3 +19,9 @@ class LoanApplication(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     approved_at = models.DateTimeField(null=True, blank=True)
     disbursed_at = models.DateTimeField(null=True, blank=True)
+
+
+class LoanRepayment(models.Model):
+    loan = models.ForeignKey(LoanApplication, on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    date = models.DateTimeField(default=timezone.now)
