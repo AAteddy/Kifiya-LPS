@@ -27,3 +27,9 @@ def disburse_loan(loan_application):
     loan_application.status = "Disbursed"
     loan_application.disbursed_at = timezone.now()
     loan_application.save()
+
+
+def record_repayment(loan_application, amount):
+    """Function to record a loan repayment."""
+    LoanRepayment.objects.create(loan=loan_application, amount=amount)
+    # Here I can add more complex logic for calculating outstanding balance and interest.
