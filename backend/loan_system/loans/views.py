@@ -34,3 +34,8 @@ class LoanApplicationViewSet(viewsets.ViewSet):
                 borrower_serializer.errors, status=status.HTTP_400_BAD_REQUEST
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def retrieve(self, request, pk=None):
+        loan = LoanApplication.objects.get(pk=pk)
+        serializer = LoanApplicationSerializer(loan)
+        return Response(serializer.data)
