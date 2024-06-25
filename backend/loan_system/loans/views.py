@@ -17,6 +17,7 @@ from .business_logic import (
 
 class LoanApplicationViewSet(viewsets.ViewSet):
     def create(self, request):
+        """Handles the creation of a new loan application."""
         serializer = LoanApplicationSerializer(data=request.data)
         if serializer.is_valid():
             borrower_data = request.data.get("borrower")
@@ -36,6 +37,7 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
+        """Handles retrieving a loan application by ID."""
         loan = LoanApplication.objects.get(pk=pk)
         serializer = LoanApplicationSerializer(loan)
         return Response(serializer.data)
