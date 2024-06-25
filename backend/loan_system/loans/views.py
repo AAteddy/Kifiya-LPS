@@ -41,3 +41,15 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         loan = LoanApplication.objects.get(pk=pk)
         serializer = LoanApplicationSerializer(loan)
         return Response(serializer.data)
+
+    @action(detail=True, methods=["put"])
+    def approve(self, request, pk=None):
+        """Handles action for approving a loan."""
+        loan = LoanApplication.objects.get(pk=pk)
+        if loan.status != "Pending":
+            return Response(
+                {"error": "Loan cannot be approved."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        approve_loan(loan)
+        return Response({"status": "Loan approved"})
