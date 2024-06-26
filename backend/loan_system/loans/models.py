@@ -3,6 +3,10 @@ from django.utils import timezone
 
 
 class Borrower(models.Model):
+    """Borrower model that defines the
+    borrower.
+    """
+
     name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
     credit_score = models.IntegerField()
@@ -11,6 +15,10 @@ class Borrower(models.Model):
 
 
 class LoanApplication(models.Model):
+    """LoanApplication model that defines the
+    loan application.
+    """
+
     borrower = models.ForeignKey(Borrower, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     term = models.IntegerField()
@@ -22,6 +30,10 @@ class LoanApplication(models.Model):
 
 
 class LoanRepayment(models.Model):
+    """LoanRepayment model that defines the
+    loan repayment.
+    """
+
     loan = models.ForeignKey(LoanApplication, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateTimeField(default=timezone.now)

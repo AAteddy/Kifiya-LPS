@@ -1,0 +1,32 @@
+[33m2017946[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: [Custom Exceptions definition] custom exceptions for specific errors defined.
+[33ma508837[m HEAD@{1}: commit: [update on settings.py] loans.middleware.ExceptionMiddleware added to MIDDLEWARE
+[33med59cdd[m HEAD@{2}: commit: [new middleware.py file added] implementing a global custom exception handler
+[33mc3c1dec[m HEAD@{3}: commit: [schema.sql file added]-do nothing-for Include SQL create table statements in your codebase.
+[33m9710622[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{4}: Branch: renamed refs/heads/master to refs/heads/main
+[33m9710622[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{6}: commit: [error handler - "404 Not Found"] get_object_or_404 function implemented
+[33mffd56fb[m HEAD@{7}: commit: [error handler] LoanApplication.DoesNotExist exception handled
+[33mbb06d97[m HEAD@{8}: commit: [code update] /repay endpoint updated
+[33md68cb17[m HEAD@{9}: commit: [new migration commit]
+[33mf2abc58[m HEAD@{10}: commit: [loan_system/settings.py updated] rest_framework & loans added to INSTALLED_APPS
+[33mf98227b[m HEAD@{11}: commit: [loan_system/urls.py] DefaultRouter imported to handle urls
+[33m64b6e95[m HEAD@{12}: commit: [repayment validation] loan repayment validation function defined
+[33m98f8a40[m HEAD@{13}: commit: [ loan disburse validate] loan disburse validation function defined
+[33m3a539c4[m HEAD@{14}: commit: [approve loan validation] loan application approval validation function defined
+[33m5657b03[m HEAD@{15}: commit: [loan application validation] loan application validation function defined
+[33m1d1e516[m HEAD@{16}: commit: [loans/business_logic.py file created] implementing LPS business rules
+[33m9e5a9dc[m HEAD@{17}: commit: [serializers] created serializers for all instances
+[33m23ab0b5[m HEAD@{18}: commit: [new file loans/serializers.py] serializers.py file created
+[33m49d9dce[m HEAD@{19}: commit: [repay view endpoint] loan repayment (repay) endpoint defined
+[33meb174e9[m HEAD@{20}: commit: [new view endpoint disburse] loan disburse view endpoint defined
+[33m623e60a[m HEAD@{21}: commit: [reject view endpoint] new view endpoint for loan reject defined
+[33m75be1ac[m HEAD@{22}: commit: [new view added] loan approve view endpoint created
+[33mde249f2[m HEAD@{23}: commit: [retrieve function] handles retrieving a loan by ID
+[33m4f38125[m HEAD@{24}: commit: [create function] handles loan creation
+[33m044dd01[m HEAD@{25}: commit: [views - views.py] implementing the views for the required endpoints
+[33m761e712[m HEAD@{26}: commit: [applying migrations] db tables created
+[33m29f25e0[m HEAD@{27}: commit: [new model instance added] LoanRepayment model defined
+[33m6c8d4e2[m HEAD@{28}: commit: [model definition] borrower (person) & LoanApplication model defined
+[33md5cf2a5[m HEAD@{29}: commit: [start new commit] new loan_system project & new app loans created
+[33m51cf74a[m HEAD@{30}: commit: deleting existing loan app & project
+[33m889fbaa[m HEAD@{31}: commit: [installed app] - rest_framework
+[33m95ac31a[m HEAD@{32}: commit (initial): [first commit] - loan_service project & loans app initialized for the LPS system
