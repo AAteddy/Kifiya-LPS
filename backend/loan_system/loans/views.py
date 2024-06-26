@@ -53,6 +53,9 @@ class LoanApplicationViewSet(viewsets.ViewSet):
     @action(detail=True, methods=["put"])
     def approve(self, request, pk=None):
         """Handles action for approving a loan."""
+        # fetches the loan application.
+        # If the loan does not exist,
+        # it will automatically return a 404 Not Found response
         loan = get_object_or_404(LoanApplication, pk=pk)
         if loan.status != "Pending":
             return Response(
