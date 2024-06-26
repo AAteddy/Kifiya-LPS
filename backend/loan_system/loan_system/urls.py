@@ -25,10 +25,13 @@ Including another URLconf
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from loans.views import LoanApplicationViewSet
+from . import swagger_urls  # Import the swagger URLs
+
 
 router = DefaultRouter()
 router.register(r"loans", LoanApplicationViewSet, basename="loan")
 
 urlpatterns = [
     path("api/", include(router.urls)),
+    path("", include(swagger_urls)),  # Include the swagger URLs
 ]

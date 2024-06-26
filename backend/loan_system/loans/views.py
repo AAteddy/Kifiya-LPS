@@ -36,7 +36,14 @@ from .business_logic import (
 
 
 class LoanApplicationViewSet(viewsets.ViewSet):
+    """
+    A simple ViewSet for managing loan applications.
+    """
+
     def create(self, request):
+        """
+        Submit a new loan application.
+        """
         serializer = LoanApplicationSerializer(data=request.data)
         if serializer.is_valid():
             borrower_data = request.data.get("borrower")
@@ -56,6 +63,9 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
+        """
+        Retrieve loan details by ID.
+        """
         try:
             loan = LoanApplication.objects.get(pk=pk)
         except LoanApplication.DoesNotExist:
@@ -82,6 +92,9 @@ class LoanApplicationViewSet(viewsets.ViewSet):
 
     @action(detail=True, methods=["put"])
     def approve(self, request, pk=None):
+        """
+        Approve a loan application.
+        """
         loan = LoanApplication.objects.get(pk=pk)
         if loan.status != "Pending":
             return Response(
@@ -93,6 +106,9 @@ class LoanApplicationViewSet(viewsets.ViewSet):
 
     @action(detail=True, methods=["put"])
     def reject(self, request, pk=None):
+        """
+        Reject a loan application.
+        """
         loan = LoanApplication.objects.get(pk=pk)
         if loan.status != "Pending":
             return Response(
@@ -105,6 +121,9 @@ class LoanApplicationViewSet(viewsets.ViewSet):
 
     @action(detail=True, methods=["post"])
     def disburse(self, request, pk=None):
+        """
+        Disburse an approved loan.
+        """
         loan = LoanApplication.objects.get(pk=pk)
         if loan.status != "Approved":
             return Response(
@@ -116,6 +135,10 @@ class LoanApplicationViewSet(viewsets.ViewSet):
 
     @action(detail=True, methods=["post"])
     def repay(self, request, pk=None):
+        """
+        Record a loan repayment.
+        """
+
         loan = LoanApplication.objects.get(pk=pk)
         serializer = LoanRepaymentSerializer(data=request.data)
         if serializer.is_valid():
