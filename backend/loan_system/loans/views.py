@@ -38,9 +38,15 @@ class LoanApplicationViewSet(viewsets.ViewSet):
 
     def retrieve(self, request, pk=None):
         """Handles retrieving a loan application by ID."""
-        loan = LoanApplication.objects.get(pk=pk)
-        serializer = LoanApplicationSerializer(loan)
-        return Response(serializer.data)
+        try:
+            loan = LoanApplication.objects.get(pk=pk)
+            serializer = LoanApplicationSerializer(loan)
+            return Response(serializer.data)
+        except LoadApplication.DoesNotExist:
+            return Response(
+                {"error": "LoanApplication with the specified ID does not exist."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
 
     @action(detail=True, methods=["put"])
     def approve(self, request, pk=None):
@@ -85,6 +91,8 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         loan = LoanApplication.objects.get(pk=pk)
         serializer = LoanRepaymentSerializer(data=request.data)
         if serializer.is_valid():
-            record_repayment(loan, serializer.validated_data["amount"])
+            LoanRepayment.objects.create(
+                loan=loan, amount=serializer.validated_data["amount"]
+            )
             return Response({"status": "Repayment recorded"})
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

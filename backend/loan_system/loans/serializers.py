@@ -19,4 +19,5 @@ class LoanApplicationSerializer(serializers.ModelSerializer):
 class LoanRepaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = LoanRepayment
-        fields = "__all__"
+        fields = ["amount", "date"]
+        read_only_fields = ["date"]
