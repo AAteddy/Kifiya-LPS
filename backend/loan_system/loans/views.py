@@ -1,6 +1,8 @@
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from django.shortcuts import get_object_or_404
+from django.core.exceptions import ObjectDoesNotExist
 from .models import Borrower, LoanApplication, LoanRepayment
 from .serializers import (
     BorrowerSerializer,
@@ -42,7 +44,7 @@ class LoanApplicationViewSet(viewsets.ViewSet):
             loan = LoanApplication.objects.get(pk=pk)
             serializer = LoanApplicationSerializer(loan)
             return Response(serializer.data)
-        except LoadApplication.DoesNotExist:
+        except LoanApplication.DoesNotExist:
             return Response(
                 {"error": "LoanApplication with the specified ID does not exist."},
                 status=status.HTTP_404_NOT_FOUND,
@@ -51,7 +53,7 @@ class LoanApplicationViewSet(viewsets.ViewSet):
     @action(detail=True, methods=["put"])
     def approve(self, request, pk=None):
         """Handles action for approving a loan."""
-        loan = LoanApplication.objects.get(pk=pk)
+        loan = get_object_or_404(LoanApplication, pk=pk)
         if loan.status != "Pending":
             return Response(
                 {"error": "Loan cannot be approved."},
@@ -63,7 +65,7 @@ class LoanApplicationViewSet(viewsets.ViewSet):
     @action(detail=True, methods=["put"])
     def reject(self, request, pk=None):
         """Handles action for rejecting a loan."""
-        loan = LoanApplication.objects.get(pk=pk)
+        loan = get_object_or_404(LoanApplication, pk=pk)
         if loan.status != "Pending":
             return Response(
                 {"error": "Loan cannot be rejected."},
@@ -76,7 +78,7 @@ class LoanApplicationViewSet(viewsets.ViewSet):
     @action(detail=True, methods=["post"])
     def disburse(self, request, pk=None):
         """Handles action for disbursement of loan."""
-        loan = LoanApplication.objects.get(pk=pk)
+        loan = get_object_or_404(LoanApplication, pk=pk)
         if loan.status != "Approved":
             return Response(
                 {"error": "Loan cannot be disbursed."},
@@ -88,7 +90,7 @@ class LoanApplicationViewSet(viewsets.ViewSet):
     @action(detail=True, methods=["post"])
     def repay(self, request, pk=None):
         """Handles action for recording a loan repayment."""
-        loan = LoanApplication.objects.get(pk=pk)
+        loan = get_object_or_404(LoanApplication, pk=pk)
         serializer = LoanRepaymentSerializer(data=request.data)
         if serializer.is_valid():
             LoanRepayment.objects.create(
