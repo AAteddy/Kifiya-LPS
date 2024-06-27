@@ -84,3 +84,23 @@ DEBUG 2024-06-27 21:02:14,437 views Received request to approve loan application
 WARNING 2024-06-27 21:02:14,443 views Loan application with ID 21 is already approved.
 DEBUG 2024-06-27 21:02:22,403 views Received request to approve loan application with ID: 19
 WARNING 2024-06-27 21:02:22,407 views Loan application with ID 19 is already approved.
+DEBUG 2024-06-27 22:10:55,699 business_logic Approving loan application ID: 1
+INFO 2024-06-27 22:10:55,704 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 22:10:55,711 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 22:10:55,716 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 22:10:55,746 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 22:10:55,757 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 22:10:55,795 business_logic Validating loan application ID: 1
+INFO 2024-06-27 22:10:55,798 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 22:10:55,808 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 22:10:55,810 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 22:15:06,419 business_logic Approving loan application ID: 1
+INFO 2024-06-27 22:15:06,425 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 22:15:06,433 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 22:15:06,437 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 22:15:06,462 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 22:15:06,467 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 22:15:06,493 business_logic Validating loan application ID: 1
+INFO 2024-06-27 22:15:06,498 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 22:15:06,514 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 22:15:06,521 business_logic Validation errors for loan application ID 1: ['Credit score too low']
