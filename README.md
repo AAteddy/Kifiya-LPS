@@ -20,7 +20,7 @@ This is a Django-based Loan Provisioning System that allows users to apply for l
 
 ### 1. Clone the Repository
 
-- git clone https://github.com/yourusername/loan-provisioningsystem.git
+- git clone https://github.com/AAteddy/Kifiya-LPS.git
 - cd loan-provisioning-system
 
 ### 2. Create a Virtual Environment
