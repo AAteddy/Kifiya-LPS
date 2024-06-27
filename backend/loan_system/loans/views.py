@@ -141,6 +141,11 @@ class LoanApplicationViewSet(viewsets.ViewSet):
 
         loan = LoanApplication.objects.get(pk=pk)
         serializer = LoanRepaymentSerializer(data=request.data)
+        if loan.status != "Disbursed":
+            return Response(
+                {"error": "Loan is not disbursed."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         if serializer.is_valid():
             record_repayment(loan, serializer.validated_data["amount"])
             return Response({"status": "Repayment recorded"})
