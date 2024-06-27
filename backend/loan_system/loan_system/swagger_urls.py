@@ -10,7 +10,7 @@ schema_view = get_schema_view(
         default_version="v1",
         description="API documentation for the Loan Provisioning system",
         terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="contact@loanprovisioning.local"),
+        contact=openapi.Contact(email="tedsaasfaha@gmail.com"),
         license=openapi.License(name="BSD License"),
     ),
     public=True,

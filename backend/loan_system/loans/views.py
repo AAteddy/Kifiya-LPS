@@ -1,3 +1,5 @@
+# views.py
+
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -14,25 +16,6 @@ from .business_logic import (
     disburse_loan,
     record_repayment,
 )
-
-# from .exceptions import LoanApplicationNotFound, InvalidLoanStatus
-
-
-# from rest_framework import status, viewsets
-# from rest_framework.decorators import action
-# from rest_framework.response import Response
-# from .models import Borrower, LoanApplication, LoanRepayment
-# from .serializers import (
-#     BorrowerSerializer,
-#     LoanApplicationSerializer,
-#     LoanRepaymentSerializer,
-# )
-# from .business_logic import (
-#     validate_loan_application,
-#     approve_loan,
-#     disburse_loan,
-#     record_repayment,
-# )
 
 
 class LoanApplicationViewSet(viewsets.ViewSet):
@@ -80,15 +63,6 @@ class LoanApplicationViewSet(viewsets.ViewSet):
             )
         serializer = LoanApplicationSerializer(loan)
         return Response(serializer.data)
-        # try:
-        #     loan = LoanApplication.objects.get(pk=pk)
-        #     serializer = LoanApplicationSerializer(loan)
-        #     return Response(serializer.data)
-        # except LoanApplication.DoesNotExist:
-        #     return Response(
-        #         {"error": "LoanApplication with the specified ID does not exist."},
-        #         status=status.HTTP_404_NOT_FOUND,
-        #     )
 
     @action(detail=True, methods=["put"])
     def approve(self, request, pk=None):
