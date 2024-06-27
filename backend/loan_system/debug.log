@@ -1,0 +1,12 @@
+DEBUG 2024-06-27 11:38:27,847 views Received request to create a loan application.
+DEBUG 2024-06-27 11:38:27,954 business_logic Validating loan application ID: 18
+INFO 2024-06-27 11:38:27,955 business_logic Loan application ID 18 validated successfully.
+INFO 2024-06-27 11:38:27,956 views Loan application created successfully.
+DEBUG 2024-06-27 11:42:27,131 views Received request to create a loan application.
+DEBUG 2024-06-27 11:42:27,188 business_logic Validating loan application ID: 19
+WARNING 2024-06-27 11:42:27,190 business_logic Validation errors for loan application ID 19: ['Credit score too low']
+WARNING 2024-06-27 11:42:27,191 views Validation errors: ['Credit score too low']
+DEBUG 2024-06-27 11:43:19,055 views Received request to create a loan application.
+DEBUG 2024-06-27 11:43:19,119 business_logic Validating loan application ID: 20
+WARNING 2024-06-27 11:43:19,120 business_logic Validation errors for loan application ID 20: ['Credit score too low']
+WARNING 2024-06-27 11:43:19,121 views Validation errors: ['Credit score too low']
