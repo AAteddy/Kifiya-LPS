@@ -104,3 +104,242 @@ DEBUG 2024-06-27 22:15:06,493 business_logic Validating loan application ID: 1
 INFO 2024-06-27 22:15:06,498 business_logic Loan application ID 1 validated successfully.
 DEBUG 2024-06-27 22:15:06,514 business_logic Validating loan application ID: 1
 WARNING 2024-06-27 22:15:06,521 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 22:37:18,226 business_logic Approving loan application ID: 1
+INFO 2024-06-27 22:37:18,238 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 22:37:18,276 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 22:37:18,280 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 22:37:18,328 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 22:37:18,356 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 22:37:18,418 business_logic Validating loan application ID: 1
+INFO 2024-06-27 22:37:18,427 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 22:37:18,447 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 22:37:18,462 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 22:40:47,493 business_logic Approving loan application ID: 1
+INFO 2024-06-27 22:40:47,497 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 22:40:47,507 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 22:40:47,521 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 22:40:47,574 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 22:40:47,584 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 22:40:47,669 business_logic Validating loan application ID: 1
+INFO 2024-06-27 22:40:47,674 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 22:40:47,687 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 22:40:47,704 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 22:40:47,868 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 22:40:47,876 views Loan application with ID 1 is already approved.
+DEBUG 2024-06-27 22:40:47,893 views Received request to approve loan application with ID: 1
+DEBUG 2024-06-27 22:40:47,897 business_logic Validating loan application ID: 1
+INFO 2024-06-27 22:40:47,901 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 22:40:47,902 business_logic Approving loan application ID: 1
+INFO 2024-06-27 22:40:47,906 business_logic Loan application ID 1 approved.
+INFO 2024-06-27 22:40:47,907 views Loan application with ID 1 approved.
+DEBUG 2024-06-27 22:40:47,961 views Received request to create a loan application.
+WARNING 2024-06-27 22:40:48,006 views Loan application data invalid: {'borrower': {'email': [ErrorDetail(string='This field is required.', code='required')]}, 'purpose': [ErrorDetail(string='This field is required.', code='required')]}
+DEBUG 2024-06-27 22:40:48,086 views Received request to disburse loan application with ID: 1
+DEBUG 2024-06-27 22:40:48,126 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 22:40:48,148 business_logic Loan application ID 1 disbursed.
+INFO 2024-06-27 22:40:48,154 views Loan application with ID 1 disbursed.
+DEBUG 2024-06-27 22:40:48,208 views Received request to reject loan application with ID: 1
+INFO 2024-06-27 22:40:48,227 views Loan application with ID 1 rejected.
+DEBUG 2024-06-27 22:40:48,332 views Received request to record repayment for loan ID: 1
+DEBUG 2024-06-27 22:40:48,353 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 22:40:48,415 business_logic Repayment of amount 500.00 recorded for loan application ID 1.
+INFO 2024-06-27 22:40:48,417 views Repayment recorded for loan ID: 1
+DEBUG 2024-06-27 22:40:48,491 views Received request to retrieve loan application with ID: 1
+INFO 2024-06-27 22:40:48,545 views Retrieved loan application with ID: 1
+DEBUG 2024-06-27 22:44:06,778 views Received request to retrieve loan application with ID: l
+ERROR 2024-06-27 22:44:06,780 views Invalid loan ID: l. ID must be a number.
+DEBUG 2024-06-27 22:44:16,559 views Received request to retrieve loan application with ID: 0
+ERROR 2024-06-27 22:44:16,566 views Loan application with ID 0 does not exist.
+DEBUG 2024-06-27 22:44:25,046 views Received request to retrieve loan application with ID: 2
+INFO 2024-06-27 22:44:25,052 views Retrieved loan application with ID: 2
+DEBUG 2024-06-27 22:44:40,018 views Received request to retrieve loan application with ID: 1
+INFO 2024-06-27 22:44:40,023 views Retrieved loan application with ID: 1
+DEBUG 2024-06-27 22:44:47,949 views Received request to retrieve loan application with ID: 3
+INFO 2024-06-27 22:44:47,954 views Retrieved loan application with ID: 3
+DEBUG 2024-06-27 22:44:54,177 views Received request to retrieve loan application with ID: 4
+INFO 2024-06-27 22:44:54,183 views Retrieved loan application with ID: 4
+DEBUG 2024-06-27 22:45:01,743 views Received request to retrieve loan application with ID: 5
+INFO 2024-06-27 22:45:01,749 views Retrieved loan application with ID: 5
+DEBUG 2024-06-27 22:45:09,868 views Received request to retrieve loan application with ID: 6
+INFO 2024-06-27 22:45:09,874 views Retrieved loan application with ID: 6
+DEBUG 2024-06-27 23:04:10,434 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:04:10,438 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 23:04:10,446 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:04:10,451 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 23:04:10,463 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:04:10,476 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 23:04:10,527 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:04:10,529 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:04:10,536 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 23:04:10,537 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 23:04:10,641 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 23:04:10,647 views Loan application with ID 1 is already approved.
+DEBUG 2024-06-27 23:04:10,664 views Received request to approve loan application with ID: 1
+DEBUG 2024-06-27 23:04:10,668 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:04:10,678 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:04:10,685 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:04:10,695 business_logic Loan application ID 1 approved.
+INFO 2024-06-27 23:04:10,700 views Loan application with ID 1 approved.
+DEBUG 2024-06-27 23:04:10,745 views Received request to create a loan application.
+WARNING 2024-06-27 23:04:10,805 views Loan application data invalid: {'purpose': [ErrorDetail(string='This field is required.', code='required')]}
+DEBUG 2024-06-27 23:04:10,827 views Received request to disburse loan application with ID: 1
+DEBUG 2024-06-27 23:04:10,831 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:04:10,838 business_logic Loan application ID 1 disbursed.
+INFO 2024-06-27 23:04:10,839 views Loan application with ID 1 disbursed.
+DEBUG 2024-06-27 23:04:10,880 views Received request to reject loan application with ID: 1
+INFO 2024-06-27 23:04:10,918 views Loan application with ID 1 rejected.
+DEBUG 2024-06-27 23:04:10,969 views Received request to record repayment for loan ID: 1
+DEBUG 2024-06-27 23:04:10,993 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:04:10,996 business_logic Repayment of amount 500.00 recorded for loan application ID 1.
+INFO 2024-06-27 23:04:11,011 views Repayment recorded for loan ID: 1
+DEBUG 2024-06-27 23:04:11,113 views Received request to retrieve loan application with ID: 1
+INFO 2024-06-27 23:04:11,129 views Retrieved loan application with ID: 1
+DEBUG 2024-06-27 23:07:00,445 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:07:00,454 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 23:07:00,477 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:07:00,488 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 23:07:00,558 business_logic Recording repayment for loan application ID: 1
+DEBUG 2024-06-27 23:07:00,835 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:07:00,836 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:07:00,841 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 23:07:00,845 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 23:07:01,033 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 23:07:01,037 views Loan application with ID 1 is already approved.
+DEBUG 2024-06-27 23:07:01,064 views Received request to approve loan application with ID: 1
+DEBUG 2024-06-27 23:07:01,067 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:07:01,080 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:07:01,085 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:07:01,106 business_logic Loan application ID 1 approved.
+INFO 2024-06-27 23:07:01,111 views Loan application with ID 1 approved.
+DEBUG 2024-06-27 23:07:01,145 views Received request to create a loan application.
+WARNING 2024-06-27 23:07:01,196 views Loan application data invalid: {'purpose': [ErrorDetail(string='This field is required.', code='required')]}
+DEBUG 2024-06-27 23:07:01,256 views Received request to disburse loan application with ID: 1
+DEBUG 2024-06-27 23:07:01,266 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:07:01,280 business_logic Loan application ID 1 disbursed.
+INFO 2024-06-27 23:07:01,281 views Loan application with ID 1 disbursed.
+DEBUG 2024-06-27 23:07:01,340 views Received request to reject loan application with ID: 1
+INFO 2024-06-27 23:07:01,363 views Loan application with ID 1 rejected.
+DEBUG 2024-06-27 23:07:01,440 views Received request to record repayment for loan ID: 1
+DEBUG 2024-06-27 23:07:01,465 business_logic Recording repayment for loan application ID: 1
+DEBUG 2024-06-27 23:07:02,206 views Received request to retrieve loan application with ID: 1
+INFO 2024-06-27 23:07:02,241 views Retrieved loan application with ID: 1
+DEBUG 2024-06-27 23:09:56,716 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:09:56,719 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 23:09:56,733 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:09:56,736 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 23:09:56,756 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:09:56,784 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 23:09:56,828 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:09:56,836 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:09:56,843 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 23:09:56,844 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 23:09:57,026 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 23:09:57,032 views Loan application with ID 1 is already approved.
+DEBUG 2024-06-27 23:09:57,128 views Received request to approve loan application with ID: 1
+DEBUG 2024-06-27 23:09:57,148 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:09:57,155 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:09:57,157 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:09:57,161 business_logic Loan application ID 1 approved.
+INFO 2024-06-27 23:09:57,181 views Loan application with ID 1 approved.
+DEBUG 2024-06-27 23:09:57,205 views Received request to create a loan application.
+WARNING 2024-06-27 23:09:57,258 views Loan application data invalid: {'purpose': [ErrorDetail(string='This field is required.', code='required')]}
+DEBUG 2024-06-27 23:09:57,315 views Received request to disburse loan application with ID: 1
+DEBUG 2024-06-27 23:09:57,333 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:09:57,375 business_logic Loan application ID 1 disbursed.
+INFO 2024-06-27 23:09:57,377 views Loan application with ID 1 disbursed.
+DEBUG 2024-06-27 23:09:57,409 views Received request to reject loan application with ID: 1
+INFO 2024-06-27 23:09:57,424 views Loan application with ID 1 rejected.
+DEBUG 2024-06-27 23:09:57,476 views Received request to record repayment for loan ID: 1
+DEBUG 2024-06-27 23:09:57,498 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:09:57,509 business_logic Repayment of amount 500.0 recorded for loan application ID 1.
+INFO 2024-06-27 23:09:57,514 views Repayment recorded for loan ID: 1
+DEBUG 2024-06-27 23:09:57,557 views Received request to retrieve loan application with ID: 1
+INFO 2024-06-27 23:09:57,564 views Retrieved loan application with ID: 1
+DEBUG 2024-06-27 23:11:49,672 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:11:49,679 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 23:11:49,692 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:11:49,698 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 23:11:49,770 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:11:49,821 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 23:11:49,853 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:11:49,855 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:11:49,858 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 23:11:49,864 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 23:11:49,985 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 23:11:49,989 views Loan application with ID 1 is already approved.
+DEBUG 2024-06-27 23:11:50,011 views Received request to approve loan application with ID: 1
+DEBUG 2024-06-27 23:11:50,034 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:11:50,058 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:11:50,078 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:11:50,100 business_logic Loan application ID 1 approved.
+INFO 2024-06-27 23:11:50,105 views Loan application with ID 1 approved.
+DEBUG 2024-06-27 23:11:50,163 views Received request to create a loan application.
+WARNING 2024-06-27 23:11:50,237 views Loan application data invalid: {'purpose': [ErrorDetail(string='This field is required.', code='required')]}
+DEBUG 2024-06-27 23:11:50,276 views Received request to disburse loan application with ID: 1
+DEBUG 2024-06-27 23:11:50,287 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:11:50,299 business_logic Loan application ID 1 disbursed.
+INFO 2024-06-27 23:11:50,306 views Loan application with ID 1 disbursed.
+DEBUG 2024-06-27 23:11:50,369 views Received request to reject loan application with ID: 1
+INFO 2024-06-27 23:11:50,383 views Loan application with ID 1 rejected.
+DEBUG 2024-06-27 23:11:50,420 views Received request to record repayment for loan ID: 1
+DEBUG 2024-06-27 23:11:50,436 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:11:50,443 business_logic Repayment of amount 500.0 recorded for loan application ID 1.
+INFO 2024-06-27 23:11:50,446 views Repayment recorded for loan ID: 1
+DEBUG 2024-06-27 23:11:50,510 views Received request to retrieve loan application with ID: 1
+INFO 2024-06-27 23:11:50,555 views Retrieved loan application with ID: 1
+DEBUG 2024-06-27 23:13:33,766 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:13:33,770 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 23:13:33,784 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:13:33,790 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 23:13:33,818 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:13:33,838 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 23:13:33,886 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:13:33,887 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:13:33,897 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 23:13:33,905 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 23:13:55,770 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:13:55,780 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 23:13:55,836 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:13:55,884 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 23:13:55,942 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:13:55,964 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 23:13:56,038 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:13:56,056 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:13:56,118 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 23:13:56,133 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 23:13:56,354 views Received request to create a loan application.
+WARNING 2024-06-27 23:13:56,383 views Loan application data invalid: {'purpose': [ErrorDetail(string='This field is required.', code='required')]}
+DEBUG 2024-06-27 23:16:05,135 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:16:05,139 business_logic Loan application ID 1 approved.
+DEBUG 2024-06-27 23:16:05,165 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:16:05,179 business_logic Loan application ID 1 disbursed.
+DEBUG 2024-06-27 23:16:05,276 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:16:05,325 business_logic Repayment of amount 500 recorded for loan application ID 1.
+DEBUG 2024-06-27 23:16:05,396 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:16:05,434 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:16:05,439 business_logic Validating loan application ID: 1
+WARNING 2024-06-27 23:16:05,456 business_logic Validation errors for loan application ID 1: ['Credit score too low']
+DEBUG 2024-06-27 23:16:05,640 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 23:16:05,657 views Loan application with ID 1 is already approved.
+DEBUG 2024-06-27 23:16:05,728 views Received request to approve loan application with ID: 1
+DEBUG 2024-06-27 23:16:05,790 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:16:05,832 business_logic Loan application ID 1 validated successfully.
+DEBUG 2024-06-27 23:16:05,838 business_logic Approving loan application ID: 1
+INFO 2024-06-27 23:16:05,874 business_logic Loan application ID 1 approved.
+INFO 2024-06-27 23:16:05,885 views Loan application with ID 1 approved.
+DEBUG 2024-06-27 23:16:05,939 views Received request to create a loan application.
+DEBUG 2024-06-27 23:16:06,043 business_logic Validating loan application ID: 1
+INFO 2024-06-27 23:16:06,051 business_logic Loan application ID 1 validated successfully.
+INFO 2024-06-27 23:16:06,055 views Loan application created successfully.
+DEBUG 2024-06-27 23:16:06,126 views Received request to disburse loan application with ID: 1
+DEBUG 2024-06-27 23:16:06,135 business_logic Disbursing loan application ID: 1
+INFO 2024-06-27 23:16:06,140 business_logic Loan application ID 1 disbursed.
+INFO 2024-06-27 23:16:06,144 views Loan application with ID 1 disbursed.
+DEBUG 2024-06-27 23:16:06,182 views Received request to reject loan application with ID: 1
+INFO 2024-06-27 23:16:06,189 views Loan application with ID 1 rejected.
+DEBUG 2024-06-27 23:16:06,233 views Received request to record repayment for loan ID: 1
+DEBUG 2024-06-27 23:16:06,255 business_logic Recording repayment for loan application ID: 1
+INFO 2024-06-27 23:16:06,296 business_logic Repayment of amount 500.0 recorded for loan application ID 1.
+INFO 2024-06-27 23:16:06,308 views Repayment recorded for loan ID: 1
+DEBUG 2024-06-27 23:16:06,384 views Received request to retrieve loan application with ID: 1
+INFO 2024-06-27 23:16:06,407 views Retrieved loan application with ID: 1

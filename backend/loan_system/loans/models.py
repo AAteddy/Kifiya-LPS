@@ -20,7 +20,8 @@ class LoanApplication(models.Model):
     """
 
     borrower = models.ForeignKey(Borrower, on_delete=models.CASCADE)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    # amount = models.DecimalField(max_digits=10, decimal_places=2)
+    amount = models.FloatField()
     term = models.IntegerField()
     purpose = models.TextField()
     status = models.CharField(max_length=20, default="Pending")
@@ -34,6 +35,10 @@ class LoanRepayment(models.Model):
     loan repayment.
     """
 
-    loan = models.ForeignKey(LoanApplication, on_delete=models.CASCADE)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    # loan = models.ForeignKey(LoanApplication, on_delete=models.CASCADE)
+    # amount = models.DecimalField(max_digits=10, decimal_places=2)
+    loan = models.ForeignKey(
+        LoanApplication, related_name="repayments", on_delete=models.CASCADE
+    )
+    amount = models.FloatField()
     date = models.DateTimeField(default=timezone.now)

@@ -13,6 +13,7 @@ class LoanApplicationViewSetTests(APITestCase):
         self.client = APIClient()
         self.borrower_data = {
             "name": "John Doe",
+            "email": "johnnasondoe@example.com",
             "credit_score": 650,
             "annual_income": 50000,
             "debt_to_income_ratio": 0.2,
@@ -20,6 +21,7 @@ class LoanApplicationViewSetTests(APITestCase):
         self.loan_application_data = {
             "amount": 10000,
             "term": 12,
+            "purpose": "House Morgage",
             "borrower": self.borrower_data,
         }
 
