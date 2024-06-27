@@ -48,3 +48,11 @@ DEBUG 2024-06-27 20:52:47,300 views Received request to approve loan application
 WARNING 2024-06-27 20:52:47,309 views Loan application with ID 1 cannot be approved as it is not in 'Pending' status.
 DEBUG 2024-06-27 20:52:58,610 views Received request to approve loan application with ID: 20
 WARNING 2024-06-27 20:52:58,615 views Loan application with ID 20 is already approved.
+DEBUG 2024-06-27 20:57:09,263 views Received request to reject loan application with ID: 1
+WARNING 2024-06-27 20:57:09,276 views Loan application with ID 1 cannot be rejected as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:57:16,487 views Received request to reject loan application with ID: 2
+WARNING 2024-06-27 20:57:16,497 views Loan application with ID 2 cannot be rejected as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:57:26,997 views Received request to reject loan application with ID: 19
+WARNING 2024-06-27 20:57:27,004 views Loan application with ID 19 cannot be rejected as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:57:38,666 views Received request to reject loan application with ID: 20
+WARNING 2024-06-27 20:57:38,673 views Loan application with ID 20 cannot be rejected as it is not in 'Pending' status.

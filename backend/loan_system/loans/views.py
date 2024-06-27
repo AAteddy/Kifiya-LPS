@@ -140,6 +140,13 @@ class LoanApplicationViewSet(viewsets.ViewSet):
                 status=status.HTTP_404_NOT_FOUND,
             )
 
+        if loan.status == "Rejected":
+            logger.warning("Loan application with ID %s is already rejected.", pk)
+            return Response(
+                {"error": "loan already rejected"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
         if loan.status != "Pending":
             logger.warning(
                 "Loan application with ID %s cannot be rejected as it is not in 'Pending' status.",
