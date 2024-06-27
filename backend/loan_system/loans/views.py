@@ -37,8 +37,10 @@ class LoanApplicationViewSet(viewsets.ViewSet):
             borrower_serializer = BorrowerSerializer(data=borrower_data)
             if borrower_serializer.is_valid():
                 borrower = borrower_serializer.save()
-                serializer.save(borrower=borrower)
-                validation_errors = validate_loan_application(serializer.instance)
+                loan_application = serializer.save(borrower=borrower)
+                validation_errors = validate_loan_application(loan_application)
+                # serializer.save(borrower=borrower)
+                # validation_errors = validate_loan_application(serializer.instance)
                 if validation_errors:
                     logger.warning("Validation errors: %s", validation_errors)
                     return Response(
@@ -82,13 +84,36 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         Approve a loan application.
         """
         logger.debug("Received request to approve loan application with ID: %s", pk)
-        loan = LoanApplication.objects.get(pk=pk)
+        try:
+            loan = LoanApplication.objects.get(pk=pk)
+        except LoanApplication.DoesNotExist:
+            logger.error("Loan application with ID %s does not exist.", pk)
+            return Response(
+                {"error": "Loan application with the specified ID does not exist."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
         if loan.status != "Pending":
-            logger.warning("Loan application with ID %s cannot be approved.", pk)
+            logger.warning(
+                "Loan application with ID %s cannot be approved as it is not in 'Pending' status.",
+                pk,
+            )
             return Response(
                 {"error": "Loan cannot be approved."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
+
+        validation_errors = validate_loan_application(loan)
+        if validation_errors:
+            logger.warning(
+                "Validation errors for loan application ID %s: %s",
+                pk,
+                validation_errors,
+            )
+            return Response(
+                {"errors": validation_errors}, status=status.HTTP_400_BAD_REQUEST
+            )
+
         approve_loan(loan)
         logger.info("Loan application with ID %s approved.", pk)
         return Response({"status": "Loan approved"})
@@ -99,9 +124,20 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         Reject a loan application.
         """
         logger.debug("Received request to reject loan application with ID: %s", pk)
-        loan = LoanApplication.objects.get(pk=pk)
+        try:
+            loan = LoanApplication.objects.get(pk=pk)
+        except LoanApplication.DoesNotExist:
+            logger.error("Loan application with ID %s does not exist.", pk)
+            return Response(
+                {"error": "Loan application with the specified ID does not exist."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
         if loan.status != "Pending":
-            logger.warning("Loan application with ID %s cannot be rejected.", pk)
+            logger.warning(
+                "Loan application with ID %s cannot be rejected as it is not in 'Pending' status.",
+                pk,
+            )
             return Response(
                 {"error": "Loan cannot be rejected."},
                 status=status.HTTP_400_BAD_REQUEST,
@@ -117,9 +153,20 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         Disburse an approved loan.
         """
         logger.debug("Received request to disburse loan application with ID: %s", pk)
-        loan = LoanApplication.objects.get(pk=pk)
+        try:
+            loan = LoanApplication.objects.get(pk=pk)
+        except LoanApplication.DoesNotExist:
+            logger.error("Loan application with ID %s does not exist.", pk)
+            return Response(
+                {"error": "Loan application with the specified ID does not exist."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
         if loan.status != "Approved":
-            logger.warning("Loan application with ID %s cannot be disbursed.", pk)
+            logger.warning(
+                "Loan application with ID %s cannot be disbursed as it is not in 'Approved' status.",
+                pk,
+            )
             return Response(
                 {"error": "Loan cannot be disbursed."},
                 status=status.HTTP_400_BAD_REQUEST,
@@ -134,14 +181,25 @@ class LoanApplicationViewSet(viewsets.ViewSet):
         Record a loan repayment.
         """
         logger.debug("Received request to record repayment for loan ID: %s", pk)
-        loan = LoanApplication.objects.get(pk=pk)
-        serializer = LoanRepaymentSerializer(data=request.data)
-        if loan.status != "Disbursed":
-            logger.warning("Loan application with ID %s is not disbursed.", pk)
+        try:
+            loan = LoanApplication.objects.get(pk=pk)
+        except LoanApplication.DoesNotExist:
+            logger.error("Loan application with ID %s does not exist.", pk)
             return Response(
-                {"error": "Loan is not disbursed."},
+                {"error": "Loan application with the specified ID does not exist."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        if loan.status != "Disbursed":
+            logger.warning(
+                "Loan application with ID %s cannot be repaid as it is not in 'Disbursed' status.",
+                pk,
+            )
+            return Response(
+                {"error": "Loan cannot be repaid."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
+        serializer = LoanRepaymentSerializer(data=request.data)
         if serializer.is_valid():
             record_repayment(loan, serializer.validated_data["amount"])
             logger.info("Repayment recorded for loan ID: %s", pk)
