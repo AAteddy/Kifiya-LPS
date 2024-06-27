@@ -26,3 +26,25 @@ DEBUG 2024-06-27 12:38:42,168 views Received request to approve loan application
 DEBUG 2024-06-27 12:38:42,176 business_logic Approving loan application ID: 19
 INFO 2024-06-27 12:38:42,194 business_logic Loan application ID 19 approved.
 INFO 2024-06-27 12:38:42,195 views Loan application with ID 19 approved.
+DEBUG 2024-06-27 20:40:19,948 views Received request to approve loan application with ID: 20
+WARNING 2024-06-27 20:40:20,030 views Loan application with ID 20 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:40:34,380 views Received request to approve loan application with ID: 21
+WARNING 2024-06-27 20:40:34,392 views Loan application with ID 21 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:40:42,090 views Received request to approve loan application with ID: 2
+WARNING 2024-06-27 20:40:42,096 views Loan application with ID 2 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:40:49,785 views Received request to approve loan application with ID: 3
+WARNING 2024-06-27 20:40:49,792 views Loan application with ID 3 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:40:56,950 views Received request to approve loan application with ID: 4
+WARNING 2024-06-27 20:40:56,958 views Loan application with ID 4 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:41:05,114 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 20:41:05,119 views Loan application with ID 1 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:51:10,816 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 20:51:10,871 views Loan application with ID 1 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:51:53,982 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 20:51:54,122 views Loan application with ID 1 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:52:39,612 views Received request to approve loan application with ID: 4
+WARNING 2024-06-27 20:52:39,618 views Loan application with ID 4 is already approved.
+DEBUG 2024-06-27 20:52:47,300 views Received request to approve loan application with ID: 1
+WARNING 2024-06-27 20:52:47,309 views Loan application with ID 1 cannot be approved as it is not in 'Pending' status.
+DEBUG 2024-06-27 20:52:58,610 views Received request to approve loan application with ID: 20
+WARNING 2024-06-27 20:52:58,615 views Loan application with ID 20 is already approved.
